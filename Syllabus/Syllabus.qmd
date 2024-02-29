@@ -1,0 +1,137 @@
+---
+title: "Experimental and Behavioral Economics"
+subtitle: "Torino, Spring term 2024"
+author: "Paolo Crosetto"
+format: pdf
+editor: visual
+---
+
+## The course
+
+The course's aim is to expose you to different uses of the **experimental method** in theoretical & applied work being carried out around the world. We will cover the **theoretical basis** of experiments as a workhorse to unearth **causal relations** in economics; and move from there to explore **four different domains** in which experiments can and have been used. We will further **run toy classroom experiments** of our own, and work on the resulting data.\
+\
+At the end of the course you should be able to
+
+-   read, appreciate, and **understand** virtually any paper in experimental economics
+
+-   **design** a simple experiment of your own, think about the data generating process, write a clear pre-analysis plan
+
+-   appreciate which **data** can be gathered via experimentation, and how to use them to shed light on causality on a wide range of topics
+
+## Main method and topics
+
+The course is organised over 4 interventions. Each intervention covers two sessions, one on Thursday afternoon, over 3 hours, where we expose the theory, experimental designs, and results of a specific experimental topic; and one on Friday morning, over two hours, where we run in-class experiments or retrieve data from previous experiments, and we learn how to analyse them. The precise schedule can and will be slightly different over different topics, but the overall structure stays the same.
+
+## Lectures
+
+### Lecture 1 -- 29 February - 1 March -- The experimental method & value elicitation
+
+#### Class session, part 1: the experimental method
+
+-   Why experiments?
+
+-   Experimental design 101: from the research question to the design
+
+-   Experimental design 102: confounds
+
+-   Traps, traps everywhere! The difficult path towards robust data
+
+#### Class session, part 2: value elicitation
+
+-   value and price
+
+-   eliciting value: BDM
+
+-   eliciting value: auctions
+
+-   common pitfalls & confounds
+
+-   the endowment effect
+
+-   eliciting beliefs and social norms: beauty contest
+
+#### Lab session
+
+-   Evaluating the value of attributes: BDM in an increasing-information paradigm
+
+-   Value in isolation vs value in a social setting: BDM in private vs when observed/oserving
+
+### Lecture 2 -- 14-15 March -- Risk elicitation
+
+#### Class session
+
+-   **theoretical considerations**: what is risk, how to measure it, theoretical assumptions;
+
+-   **existing methods**: differing approaches in econ & psychology, different tools;
+
+-   **empirical problems**: hypothetical bias, cognitive limits, noise;
+
+-   **external validity**: does all this work?
+
+-   a **meta-analysis**: looking at \~20k subjects, over \~10 tasks
+
+#### Lab session
+
+-   running different risk elicitation tasks in the lab
+
+### Lecture 3 -- 11-12 April -- Consumer biases
+
+#### Class session
+
+-   the rational decision maker
+
+    -   assumptions & consequences
+
+    -   known strengths and weaknesses
+
+-   the decision maker as a human being
+
+    -   why biases
+
+    -   a small catalogue of biases
+
+-   biases or heuristics?
+
+#### Lab session
+
+-   identifying our own biases through experimentation
+
+-   biases or heuristics? thinking, fast & slow
+
+-   analyzing fast & slow data
+
+### Lecture 4 -- 9-10 May -- Nutritional food labeling
+
+#### Class session
+
+-   why food labels?
+
+-   nutritional policies for *homines oeconomici*
+
+-   nutritional policies for human beings
+
+-   getting into the mind of subjects: the cognitive load of food choice and what to do about it
+
+-   building counterfactuals: getting from micro- to macro- experiments
+
+-   behavioral vs traditional economics: price vs labels
+
+#### Lab session
+
+-   a diet-building exercise
+
+-   a supermarket-in-the-lab exercise
+
+-   difference in difference as an experimental workhorse
+
+## Evaluation
+
+There will be no formal, closed-book exam for my course. There will be a take-home exam, centred around an article report.
+
+See the Exam Rules pdf for details.
+
+## Contacts
+
+I do not live in Torino, so in-person meetings are generally not possible. It is possible to schedule a meeting right before/after class; and, more generally, you can reach me anytime by email at [paolo.crosetto\@gmail.com](mailto:paolo.crosetto@gmail.com). We can schedule a skype/zoom meeting, too.
+
+In the very unlikely case that you would like to know more about me or my experimental work, you can visit [my blog](https://paolocrosetto.wordpress.com/), my [scholar page](https://scholar.google.fr/citations?user=whPRYPAAAAAJ&hl=it) or [my institutional website](https://gael.univ-grenoble-alpes.fr/membres/paolo-crosetto).
