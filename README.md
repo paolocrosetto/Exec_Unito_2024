@@ -71,3 +71,10 @@ To choose one, paper, go here: [this google spreadhseet](https://docs.google.com
 
 -   Social norm: <https://forms.gle/3tvdF6CKQ5w3v4iw7>
 
+### Session 1 -- lab session -- WTP in a social context
+
+- Experimental software and interface: <https://gaelexperience.fr> then blue button then insert an integer 1-12
+
+- Statistical software: anything, but I'll use R
+
+
