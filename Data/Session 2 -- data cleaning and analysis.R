@@ -4,6 +4,7 @@ library(janitor)
 
 #### 1. reading in the file ####
 
+rawdf <- read_csv("Data/Session_2_responses_2024.csv")
 rawdf <- read_csv("Data/Session_2_2023_raw_data.csv")
 
 df <- rawdf
@@ -20,7 +21,7 @@ new_names <- c("ID", "Created", "Link",
                "SOEP", "investment", "lottery", "bret", 
                "HL01", "HL10", "HL02", "HL03", "HL04", 
                "HL05", "HL06", "HL07", "HL08", "HL09", 
-               "nickname", "gender")
+               "gender", "nickname")
 
 ## apply new names
 names(df) <- new_names
@@ -82,9 +83,17 @@ df <- df %>%
 df <- df %>% 
   select(-starts_with("D"), -starts_with("HL"))
 
+df %>% 
+  mutate(sample = "2023")
 
 ###################################################################################
+df2024 <- df2024 %>% 
+  mutate(sample = "2024")
 
+df <- bind_rows(df2024, df)
+
+df <- df %>% 
+  mutate(sample = if_else(is.na(sample), "2023", sample))
 
 #### 0. Analyzing choices #####
 
@@ -93,8 +102,9 @@ df <- df %>%
 
 ## SOEP: you are more "moderate" than the usual subject pool
 df %>% 
-  ggplot(aes(SOEP))+
-  geom_histogram()
+  ggplot(aes(SOEP, fill = sample))+
+  geom_histogram()+
+  facet_wrap(~sample)
 
 ## DOSPERT
 df %>% 
@@ -107,27 +117,27 @@ df %>%
 
 ## dospert one by one
 df %>% 
-  ggplot(aes(spe_health))+
+  ggplot(aes(spe_social, color = sample))+
   geom_density()
   
 ## investment game
 theme_set(hrbrthemes::theme_ipsum_es())
 
 df %>% 
-  ggplot(aes(investment))+
-  geom_density(size = 2, color = "pink")
+  ggplot(aes(investment, color = sample))+
+  geom_density(size = 2)
 
 ## bomb task
 
 df %>% 
-  ggplot(aes(bret))+
-  geom_density(size = 2, color = "pink")+
+  ggplot(aes(bret, color = sample))+
+  geom_density(size = 2)+
   geom_vline(xintercept = 50, color = "red")
 
 ## lottery task
 df %>% 
   ggplot(aes(lottery))+
-  geom_bar(fill = "blue")+
+  geom_bar(position = position_dodge())+
   geom_vline(xintercept = 4.5, color = "red")
 
 ## HL
@@ -140,18 +150,29 @@ df %>%
 
 df %>% 
   ungroup() %>% 
-  select(-ID, -gender) %>% 
-  gather(key, value, -nickname) %>% 
+  #filter(sample == "2024") %>% 
+  filter(!is.na(SOEP)) %>% 
+  select(-ID, -nickname, -contains("sampl")) %>% 
+  gather(key, value, -gender) %>% 
   group_by(key) %>% 
-  group_modify(~broom::tidy(t.test(.$value~.$nickname)))
+  group_modify(~broom::tidy(t.test(.$value~.$gender))) %>% 
+  gt::gt()
+
+library(effectsize)
 
 df %>% 
   ungroup() %>% 
-  select(-ID, -gender) %>% 
-  gather(key, value, -nickname) %>% 
-  group_by(key, nickname) %>% 
-  summarise(mean = mean(value)) %>% 
-  spread(nickname, mean)
+  #filter(sample == "2024") %>% 
+  filter(!is.na(SOEP)) %>% 
+  select(-ID, -nickname, -contains("sampl")) %>% 
+  gather(key, value, -gender) %>% 
+  group_by(key) %>% 
+  group_modify(~broom::tidy(cohens_d(.$value~.$gender))) %>% 
+  gt::gt()
+
+
+
+
 
 ## correlation
 
@@ -177,9 +198,17 @@ panel.cor <- function(x, y, digits = 2, prefix = "", cex.cor, ...)
   text(0.5, 0.5, txt)
 }
 
+# do tasks correlate with one another
 df %>% 
   ungroup() %>% 
   select(bret, lottery, safeHL, investment) %>% 
+  pairs(diag.panel = panel.hist, upper.panel = panel.cor)
+
+## do tasks correlate with questionnaires
+df %>% 
+  filter(!is.na(SOEP)) %>% 
+  ungroup() %>% 
+  select(bret, lottery, safeHL, investment, spe_all, SOEP) %>% 
   pairs(diag.panel = panel.hist, upper.panel = panel.cor)
 
 
@@ -258,4 +287,35 @@ dfr %>%
   select(-ID, -gender) %>% 
   pairs(diag.panel = panel.hist, upper.panel = panel.cor)
 
+# bret
+dfr %>% 
+  ggplot(aes(rbret))+
+  geom_density()+
+  geom_vline(xintercept = 1, color = "red")
 
+# investment game
+dfr %>% 
+  ggplot(aes(rinvestment))+
+  geom_density()+
+  geom_vline(xintercept = 1, color = "red")
+
+
+# lottery choice
+dfr %>% 
+  ggplot(aes(rlottery))+
+  geom_density()+
+  geom_vline(xintercept = 1, color = "red")
+
+# hl 
+dfr %>% 
+  ggplot(aes(rhl))+
+  geom_density()+
+  geom_vline(xintercept = 1, color = "red")
+
+## all together now
+dfr %>% 
+  select(ID, starts_with("r")) %>% 
+  pivot_longer(-ID, names_to = "task", values_to="r", names_prefix = "r") %>% 
+  ggplot(aes(r, color = task))+
+  geom_density() +
+  scale_x_continuous(limits = c(-1,1.5))
