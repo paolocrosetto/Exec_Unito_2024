@@ -86,3 +86,21 @@ To choose one, paper, go here: [this google spreadhseet](https://docs.google.com
 -   Experimental software for the elicitation: <https://paolocrosetto.aidaform.com/expert-template-risk-taking-test>
 
 -   Meta-analysis of Risk Elicitation task results: <https://paolocrosetto.shinyapps.io/METARET_APP/>
+
+### Session 3
+
+##### Session 3 -- classroom
+
+Questionnaire 1: https://forms.gle/TyiM9pmzBhGQY1a68
+
+Questionnaires 2, 3 and 4: Classex https://classex.uni-passau.de/bin/ (INRAE -- Exec Unito - password: unito)
+
+##### Session 3 - Lab session
+
+Experimental software: https://gaelexperience.fr/
+
+Instructions: /Experiments/session3_exp_instructions.pdf
+
+Full data and script https://github.com/paolocrosetto/what_are_you_calling_intuitive_data_and_analysis
+
+
