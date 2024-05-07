@@ -1,13 +1,11 @@
- 
+
 library(tidyverse)
 library(janitor)
 
 #### 1. reading in the file ####
 
-rawdf <- read_csv("Data/Session_2_responses_2024.csv")
-rawdf <- read_csv("Data/Session_2_2023_raw_data.csv")
+df <- read_csv("Session_2_responses_2024.csv")
 
-df <- rawdf
 
 
 #### 2. data cleaning ####
@@ -83,17 +81,11 @@ df <- df %>%
 df <- df %>% 
   select(-starts_with("D"), -starts_with("HL"))
 
-df %>% 
-  mutate(sample = "2023")
+df <- df %>% 
+  mutate(sample = "Torino_2024")
 
 ###################################################################################
-df2024 <- df2024 %>% 
-  mutate(sample = "2024")
 
-df <- bind_rows(df2024, df)
-
-df <- df %>% 
-  mutate(sample = if_else(is.na(sample), "2023", sample))
 
 #### 0. Analyzing choices #####
 

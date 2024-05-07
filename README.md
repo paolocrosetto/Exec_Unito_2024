@@ -102,3 +102,14 @@ Experimental software: <https://gaelexperience.fr/>
 Instructions: [Experiments/session3_exp_instructions.pdf](Experiments/session3_exp_instructions.pdf)
 
 Full data and script <https://github.com/paolocrosetto/what_are_you_calling_intuitive_data_and_analysis>
+
+
+### Session 4
+
+##### Session 4 -- classroom
+
+Experimental software: <https://gaelexperience.fr/>
+
+Experiment 1: click on the GREEN button "Diet Building Turin Showcase 2024"
+
+Experiment 2: click on the BLUE button then wait for instructions. 
